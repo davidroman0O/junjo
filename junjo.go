@@ -97,7 +97,7 @@ func (j *Junjo) AssignTaskUnits(taskID types.TaskID, ids []types.TaskUnitID) err
 }
 
 // Workers/Owners will only see the tasks their need to accomplish
-func (j *Junjo) GetInbox(ownerID types.OwnerID, cfgs ...types.QueryConfig) ([]types.InboxTaskUnit, error) {
+func (j *Junjo) GetInbox(ownerID types.OwnerID, cfgs ...types.QueryConfig) ([]types.InboxAllTaskUnit, error) {
 	params := types.NewQuery(cfgs...)
 	return j.storageImplementation.GetInbox(ownerID, params)
 }

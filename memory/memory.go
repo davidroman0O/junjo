@@ -225,12 +225,12 @@ func (ms *MemoryStorage) NewUUID() (string, error) {
 }
 
 // TODO (@droman): too lazy to implement the params but it's here
-func (ms *MemoryStorage) GetInbox(ownerID types.OwnerID, params *types.QueryParams) ([]types.InboxTaskUnit, error) {
+func (ms *MemoryStorage) GetInbox(ownerID types.OwnerID, params *types.QueryParams) ([]types.InboxAllTaskUnit, error) {
 	ms.mu.RLock()
 	defer ms.mu.RUnlock()
 
 	var err error
-	var inboxUnits []types.InboxTaskUnit
+	var inboxUnits []types.InboxAllTaskUnit
 
 	definitionIDs := []types.TaskDefinitionID{}
 	definitions := map[types.TaskDefinitionID]types.TaskDefinition{}
@@ -305,7 +305,100 @@ func (ms *MemoryStorage) GetInbox(ownerID types.OwnerID, params *types.QueryPara
 			workOwner = append(workOwner, *v.Unit)
 		}
 		if len(workOwner) > 0 {
-			inboxUnits = append(inboxUnits, types.InboxTaskUnit{
+			inboxUnits = append(inboxUnits, types.InboxAllTaskUnit{
+				TopicID:   ms.jobs[watchTasksForOwner[idxTask].JobID].TopicID,
+				JobID:     watchTasksForOwner[idxTask].JobID,
+				TaskID:    watchTasksForOwner[idxTask].Key,
+				TaskUnits: workOwner,
+			})
+		}
+	}
+
+	return inboxUnits, nil
+}
+
+// TODO (@droman): too lazy to implement the params but it's here
+func (ms *MemoryStorage) GetInboxTopic(ownerID types.OwnerID, topicID types.TopicID, params *types.QueryParams) ([]types.InboxTopicTaskUnit, error) {
+	ms.mu.RLock()
+	defer ms.mu.RUnlock()
+
+	var err error
+	var inboxUnits []types.InboxTopicTaskUnit
+
+	definitionIDs := []types.TaskDefinitionID{}
+	definitions := map[types.TaskDefinitionID]types.TaskDefinition{}
+
+	for _, def := range ms.definitions {
+		if def.OwnerID == ownerID {
+			definitionIDs = append(definitionIDs, def.Key)
+		}
+	}
+
+	watchTasksForOwner := []*types.Task{}
+
+	taskKeys := make([]types.TaskID, 0, len(ms.tasks))
+	for ti := range ms.tasks {
+		taskKeys = append(taskKeys, ti)
+	}
+
+	for i := 0; i < len(taskKeys); i++ {
+		add := false
+		for _, unit := range ms.tasks[taskKeys[i]].TaskUnits {
+			for i := 0; i < len(definitionIDs); i++ {
+				if unit.TaskDefinitionID == definitionIDs[i] {
+					add = true
+				}
+			}
+		}
+		if add {
+			for _, unit := range ms.tasks[taskKeys[i]].TaskUnits {
+				definitions[unit.TaskDefinitionID] = *ms.definitions[unit.TaskDefinitionID]
+			}
+			watchTasksForOwner = append(watchTasksForOwner, ms.tasks[taskKeys[i]])
+		}
+
+	}
+
+	defsKeys := make([]types.TaskDefinitionID, 0, len(definitions))
+	for tdi := range definitions {
+		defsKeys = append(defsKeys, tdi)
+	}
+
+	definitionsFlt := []types.TaskDefinition{}
+	for i := 0; i < len(defsKeys); i++ {
+		definitionsFlt = append(definitionsFlt, definitions[defsKeys[i]])
+	}
+
+	for idxTask := 0; idxTask < len(watchTasksForOwner); idxTask++ {
+
+		if len(watchTasksForOwner[idxTask].JobID) == 0 {
+			return nil, fmt.Errorf("critical error a task without JobID")
+		}
+		if _, ok := ms.jobs[watchTasksForOwner[idxTask].JobID]; !ok {
+			continue
+		}
+		units := []types.TaskUnit{}
+
+		// convert to value (stack)
+		for i := 0; i < len(watchTasksForOwner[idxTask].TaskUnitIDs); i++ {
+			units = append(units, *watchTasksForOwner[idxTask].TaskUnits[watchTasksForOwner[idxTask].TaskUnitIDs[i]])
+		}
+
+		var dag *types.WorkUnitDag
+
+		if dag, err = types.CreateDagFromTaskUnits(ms, units, definitionsFlt); err != nil {
+			return nil, err
+		}
+
+		workOwner := []types.TaskUnit{}
+		workAvailable := dag.AvailableNodeUnitWithOwner(ownerID)
+
+		// this make no sense, you don't have a jobid
+		for _, v := range workAvailable {
+			workOwner = append(workOwner, *v.Unit)
+		}
+		if len(workOwner) > 0 {
+			inboxUnits = append(inboxUnits, types.InboxAllTaskUnit{
 				TopicID:   ms.jobs[watchTasksForOwner[idxTask].JobID].TopicID,
 				JobID:     watchTasksForOwner[idxTask].JobID,
 				TaskID:    watchTasksForOwner[idxTask].Key,

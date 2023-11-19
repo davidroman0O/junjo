@@ -334,7 +334,7 @@ func TestBrigadeDeCuisine(t *testing.T) {
 	//	Now let's create a Job + Task + TaskUnits
 	// fmt.Println("first work to do", available[0].Definition.Name, "for", available[0].Definition.OwnerID)
 	// fmt.Println("search work for", barker.Key)
-	inboxBarker := []types.InboxTaskUnit{}
+	inboxBarker := []types.InboxAllTaskUnit{}
 	if inboxBarker, err = jj.GetInbox(barker.Key); err != nil {
 		t.Error(err)
 		return

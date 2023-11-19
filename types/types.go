@@ -15,6 +15,11 @@ var (
 	ErrOwnerNameAlreadyExists = errors.New("owner with same name already exists")
 )
 
+// Owners will have to authenticate and i don't care how
+type AuthenticationInterface struct {
+	//
+}
+
 // StorageInterface defines the methods required for managing data persistence.
 // - creation: you never have to give an ID of the entitiy, it has to be managed by the type and your implementation
 // - every unassigned Job, Task, TaskUnit are drafts, consider deleting them after a while
@@ -38,6 +43,7 @@ type StorageInterface interface {
 	// Create new `Job` without TaskID and no units
 	CreateJob(cfgs ...JobConfig) (*Job, error) // [x]
 
+	//
 	CreateTaskUnits(units []*TaskUnit) ([]TaskUnitID, error) // [ ]
 
 	// Assign a drafted `Job` to a `Topic` for processing
@@ -50,9 +56,14 @@ type StorageInterface interface {
 	AssignTaskUnits(taskID TaskID, ids []TaskUnitID) error // [x]
 
 	// Owners should only see the `TaskUnit` they are supposed to accomplish
-	GetInbox(ownerID OwnerID, params *QueryParams) ([]InboxTaskUnit, error) // [x]
+	// It is all topics
+	GetInbox(ownerID OwnerID, params *QueryParams) ([]InboxAllTaskUnit, error) // [x]
+
+	// Owners should only see the `TaskUnit` they are supposed to accomplish on one particular topic
+	GetInboxTopic(ownerID OwnerID, topicID TopicID, params *QueryParams) ([]InboxTopicTaskUnit, error) // [x]
 
 	GetJob(jobID JobID) (*Job, error)
+
 	UpdateTaskDefinition(id TaskDefinitionID, ownerID OwnerID, name string, description string, identifier string) (*TaskDefinition, error)
 	DeprecateTaskDefinition(id TaskDefinitionID) error
 	HasTaskDefinition(id TaskDefinitionID) (bool, error)
@@ -347,8 +358,14 @@ func NewTaskUnit(id TaskUnitID, cfgs ...TaskUnitConfig) *TaskUnit {
 	return unit
 }
 
-type InboxTaskUnit struct {
+type InboxAllTaskUnit struct {
 	TopicID   TopicID    `json:"topicID" db:"topicID"`
+	JobID     JobID      `json:"jobID" db:"jobID"`
+	TaskID    TaskID     `json:"taskID" db:"taskID"`
+	TaskUnits []TaskUnit `json:"taskUnits" db:"taskUnits"`
+}
+
+type InboxTopicTaskUnit struct {
 	JobID     JobID      `json:"jobID" db:"jobID"`
 	TaskID    TaskID     `json:"taskID" db:"taskID"`
 	TaskUnits []TaskUnit `json:"taskUnits" db:"taskUnits"`
@@ -494,6 +511,7 @@ func WithTopicJobs(job ...*Job) TopicConfig {
 // Topic represents a high-level category of related work.
 type Topic struct {
 	Key            TopicID        `json:"id" db:"id"`
+	InputType      HashTopic      `json:"inputType" db:"inputType"` // we hash the struct type to check the dev
 	Name           string         `json:"name" db:"name"`
 	Description    string         `json:"description" db:"description"`
 	JobIDs         []JobID        `json:"jobIds" db:"jobIds"`
