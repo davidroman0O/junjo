@@ -2,6 +2,15 @@
 
 > WORK IN PROGRESS
 
+Changed my plan
+- do distributed raft nodes
+- store should be sqlite
+- should provide tools for dag manipulation
+- storage shoul be as rows
+- goal: not meant for big graph but smaller ones (it's not a database)
+
+stop thinking too much
+
 > Hierarchical Workflow Management System with DAG-Structured Tasks in Go
 
 Develop a robust workflow management system in Go, aimed at structuring and executing units of work in an organized, dependency-resolved manner. The system hierarchy encompasses Topics, Jobs, and Tasks, each level offering a layer of organization and control.
