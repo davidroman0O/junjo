@@ -191,7 +191,25 @@
           },
           {
             "objectType": "Table_SQLITE",
-            "name": "tasks",
+            "name": "table_1",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [],
+            "indexes": [],
+            "foreignKeys": [],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "verticesTypes",
             "autoIncrement": 0,
             "isWithoutRowID": false,
             "oldName": "",
@@ -219,6 +237,190 @@
               },
               {
                 "objectType": "TableField_SQLITE",
+                "name": "label",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "label"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "dagTemplates",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "id",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "name",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "name"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "version",
+                "type": "integer",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "version"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "jsonSchemaParameters",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "jsonSchemaParameters"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "dag",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "id",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "createdAt",
+                "type": "integer",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "createdAt"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "updatedAt",
+                "type": "integer",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "updatedAt"
+              },
+              {
+                "objectType": "TableField_SQLITE",
                 "name": "status",
                 "type": "integer",
                 "size": -2147483648,
@@ -235,6 +437,22 @@
               },
               {
                 "objectType": "TableField_SQLITE",
+                "name": "parameters",
+                "type": "text",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "parameters"
+              },
+              {
+                "objectType": "TableField_SQLITE",
                 "name": "jobId",
                 "type": "INTEGER",
                 "size": -2147483648,
@@ -248,6 +466,22 @@
                 "generatedType": "None",
                 "generatedAlwaysAsValue": "",
                 "oldName": "jobId"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "dagTemplateId",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "dagTemplateId"
               }
             ],
             "indexes": [],
@@ -296,6 +530,24 @@
                 "sourceCardinality": "NoneRelationship",
                 "targetCardinality": "NoneRelationship",
                 "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_dag_dagTemplates_1",
+                "fields": [
+                  "dagTemplateId"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "dagTemplates",
+                "referencedFields": [
+                  "id"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
               }
             ],
             "uniques": [],
@@ -304,7 +556,7 @@
           },
           {
             "objectType": "Table_SQLITE",
-            "name": "taskVertices",
+            "name": "vertices",
             "autoIncrement": 0,
             "isWithoutRowID": false,
             "oldName": "",
@@ -361,6 +613,54 @@
                 "generatedType": "None",
                 "generatedAlwaysAsValue": "",
                 "oldName": "json"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "coordinates",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "coordinates"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "typeId",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "typeId"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "dagId",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "dagId"
               }
             ],
             "indexes": [],
@@ -399,7 +699,7 @@
                   "id"
                 ],
                 "referencedSchema": "main",
-                "referencedTable": "taskEdges",
+                "referencedTable": "edges",
                 "referencedFields": [
                   "sourceTaskVerticeId"
                 ],
@@ -417,9 +717,45 @@
                   "id"
                 ],
                 "referencedSchema": "main",
-                "referencedTable": "taskEdges",
+                "referencedTable": "edges",
                 "referencedFields": [
                   "destTaskVerticeId"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_vertices_verticesTypes_1",
+                "fields": [
+                  "typeId"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "verticesTypes",
+                "referencedFields": [
+                  "id"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_vertices_dag_1",
+                "fields": [
+                  "dagId"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "dag",
+                "referencedFields": [
+                  "id"
                 ],
                 "onDelete": "",
                 "onUpdate": "",
@@ -435,7 +771,7 @@
           },
           {
             "objectType": "Table_SQLITE",
-            "name": "taskEdges",
+            "name": "edges",
             "autoIncrement": 0,
             "isWithoutRowID": false,
             "oldName": "",
@@ -492,6 +828,22 @@
                 "generatedType": "None",
                 "generatedAlwaysAsValue": "",
                 "oldName": "destTaskVerticeId"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "metadata",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "metadata"
               }
             ],
             "indexes": [],
@@ -508,6 +860,485 @@
             "uniques": [],
             "checks": [],
             "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "templateEdges",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "id",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "sourceTaskVerticeId",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "sourceTaskVerticeId"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "destTaskVerticeId",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "destTaskVerticeId"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "metadata",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "metadata"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "templateVertices",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "id",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "json",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "json"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "coordinates",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "coordinates"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "typeId",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "typeId"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "templateId",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "templateId"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_taskVertices_taskEdges_1_copy_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "templateEdges",
+                "referencedFields": [
+                  "sourceTaskVerticeId"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_taskVertices_taskEdges_2_copy_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "templateEdges",
+                "referencedFields": [
+                  "destTaskVerticeId"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_vertices_verticesTypes_1_copy_1",
+                "fields": [
+                  "typeId"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "verticesTypes",
+                "referencedFields": [
+                  "id"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_templateVertices_dagTemplates_1",
+                "fields": [
+                  "templateId"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "dagTemplates",
+                "referencedFields": [
+                  "id"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "metadata",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "dagId",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "dagId"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "metadata",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "metadata"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "dagId"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_metadata_dag_1",
+                "fields": [
+                  "dagId"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "dag",
+                "referencedFields": [
+                  "id"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "log",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "id",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "dagId",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "dagId"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "createdAt",
+                "type": "integer",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "createdAt"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "logLevel",
+                "type": "integer",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "logLevel"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "message",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "message"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_log_dag_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "dag",
+                "referencedFields": [
+                  "id"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
           }
         ],
         "views": []
@@ -517,7 +1348,7 @@
   "diagrams": [
     {
       "name": "Diagram 1",
-      "paperWidth": 1,
+      "paperWidth": 2,
       "paperHeight": 1,
       "tableFont": "Arial Unicode MS",
       "tableFontSize": 14,
@@ -532,8 +1363,8 @@
           "type": "table",
           "schemaName": "main",
           "tableName": "jobs",
-          "x": 60,
-          "y": 250,
+          "x": 350,
+          "y": 700,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -547,9 +1378,9 @@
         {
           "type": "table",
           "schemaName": "main",
-          "tableName": "tasks",
-          "x": 450,
-          "y": 290,
+          "tableName": "dag",
+          "x": 350,
+          "y": 950,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -564,8 +1395,8 @@
           "type": "table",
           "schemaName": "main",
           "tableName": "statuses",
-          "x": 770,
-          "y": 310,
+          "x": 920,
+          "y": 1040,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -579,9 +1410,9 @@
         {
           "type": "table",
           "schemaName": "main",
-          "tableName": "taskVertices",
-          "x": 480,
-          "y": 550,
+          "tableName": "vertices",
+          "x": 920,
+          "y": 790,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -595,9 +1426,105 @@
         {
           "type": "table",
           "schemaName": "main",
-          "tableName": "taskEdges",
-          "x": 110,
-          "y": 560,
+          "tableName": "edges",
+          "x": 1170,
+          "y": 790,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "verticesTypes",
+          "x": 920,
+          "y": 540,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "dagTemplates",
+          "x": 660,
+          "y": 660,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "templateVertices",
+          "x": 920,
+          "y": 280,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "templateEdges",
+          "x": 920,
+          "y": 30,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "metadata",
+          "x": 350,
+          "y": 1200,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "log",
+          "x": 30,
+          "y": 950,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -613,27 +1540,23 @@
       "relations": [
         {
           "name": "fk_tasks_statuses_1",
-          "sourceTableName": "tasks",
+          "sourceTableName": "dag",
           "sourceSchemaName": "main",
           "lineWidth": 1,
           "visible": true,
           "vertices": [
             {
-              "x": 665,
-              "y": 390
+              "x": 565,
+              "y": 1110
             },
             {
-              "x": 790,
-              "y": 390
-            },
-            {
-              "x": 755,
-              "y": 390
+              "x": 905,
+              "y": 1110
             }
           ],
           "label": {
-            "x": 655,
-            "y": 352,
+            "x": 555,
+            "y": 1072,
             "width": 131,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -651,27 +1574,23 @@
         },
         {
           "name": "fk_tasks_jobs_1",
-          "sourceTableName": "tasks",
+          "sourceTableName": "dag",
           "sourceSchemaName": "main",
           "lineWidth": 1,
           "visible": true,
           "vertices": [
             {
-              "x": 435,
-              "y": 350
+              "x": 450,
+              "y": 935
             },
             {
-              "x": 340,
-              "y": 350
-            },
-            {
-              "x": 275,
-              "y": 350
+              "x": 450,
+              "y": 915
             }
           ],
           "label": {
-            "x": 339,
-            "y": 312,
+            "x": 346,
+            "y": 905,
             "width": 106,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -689,27 +1608,23 @@
         },
         {
           "name": "fk_taskNodes_statuses_1",
-          "sourceTableName": "taskVertices",
+          "sourceTableName": "vertices",
           "sourceSchemaName": "main",
           "lineWidth": 1,
           "visible": true,
           "vertices": [
             {
-              "x": 695,
-              "y": 650
+              "x": 1020,
+              "y": 1005
             },
             {
-              "x": 870,
-              "y": 650
-            },
-            {
-              "x": 870,
-              "y": 525
+              "x": 1020,
+              "y": 1025
             }
           ],
           "label": {
-            "x": 685,
-            "y": 612,
+            "x": 1022,
+            "y": 955,
             "width": 168,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -727,31 +1642,23 @@
         },
         {
           "name": "fk_taskVertices_taskEdges_1",
-          "sourceTableName": "taskVertices",
+          "sourceTableName": "vertices",
           "sourceSchemaName": "main",
           "lineWidth": 1,
           "visible": true,
           "vertices": [
             {
-              "x": 465,
-              "y": 620
+              "x": 1135,
+              "y": 905
             },
             {
-              "x": 380,
-              "y": 620
-            },
-            {
-              "x": 380,
-              "y": 620
-            },
-            {
-              "x": 325,
-              "y": 620
+              "x": 1155,
+              "y": 905
             }
           ],
           "label": {
-            "x": 285,
-            "y": 582,
+            "x": 935,
+            "y": 867,
             "width": 190,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -769,32 +1676,350 @@
         },
         {
           "name": "fk_taskVertices_taskEdges_2",
-          "sourceTableName": "taskVertices",
+          "sourceTableName": "vertices",
           "sourceSchemaName": "main",
           "lineWidth": 1,
           "visible": true,
           "vertices": [
             {
-              "x": 465,
-              "y": 700
+              "x": 1135,
+              "y": 875
             },
             {
-              "x": 380,
-              "y": 700
-            },
-            {
-              "x": 380,
-              "y": 700
-            },
-            {
-              "x": 325,
-              "y": 700
+              "x": 1155,
+              "y": 875
             }
           ],
           "label": {
-            "x": 285,
-            "y": 662,
+            "x": 935,
+            "y": 837,
             "width": 190,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_vertices_verticesTypes_1",
+          "sourceTableName": "vertices",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1020,
+              "y": 775
+            },
+            {
+              "x": 1020,
+              "y": 755
+            }
+          ],
+          "label": {
+            "x": 1028,
+            "y": 785,
+            "width": 184,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_vertices_dag_1",
+          "sourceTableName": "vertices",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 905,
+              "y": 920
+            },
+            {
+              "x": 670,
+              "y": 920
+            },
+            {
+              "x": 670,
+              "y": 1050
+            },
+            {
+              "x": 565,
+              "y": 1050
+            }
+          ],
+          "label": {
+            "x": 921,
+            "y": 892,
+            "width": 122,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_dag_dagTemplates_1",
+          "sourceTableName": "dag",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 565,
+              "y": 990
+            },
+            {
+              "x": 610,
+              "y": 990
+            },
+            {
+              "x": 610,
+              "y": 800
+            },
+            {
+              "x": 645,
+              "y": 800
+            }
+          ],
+          "label": {
+            "x": 561,
+            "y": 962,
+            "width": 167,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_taskVertices_taskEdges_1_copy_1",
+          "sourceTableName": "templateVertices",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1035,
+              "y": 265
+            },
+            {
+              "x": 1035,
+              "y": 245
+            }
+          ],
+          "label": {
+            "x": 890,
+            "y": 235,
+            "width": 242,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_taskVertices_taskEdges_2_copy_1",
+          "sourceTableName": "templateVertices",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1005,
+              "y": 265
+            },
+            {
+              "x": 1005,
+              "y": 245
+            }
+          ],
+          "label": {
+            "x": 890,
+            "y": 235,
+            "width": 242,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_vertices_verticesTypes_1_copy_1",
+          "sourceTableName": "templateVertices",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1020,
+              "y": 495
+            },
+            {
+              "x": 1020,
+              "y": 525
+            }
+          ],
+          "label": {
+            "x": 1028,
+            "y": 485,
+            "width": 236,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_templateVertices_dagTemplates_1",
+          "sourceTableName": "templateVertices",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 905,
+              "y": 380
+            },
+            {
+              "x": 800,
+              "y": 380
+            },
+            {
+              "x": 800,
+              "y": 645
+            }
+          ],
+          "label": {
+            "x": 915,
+            "y": 342,
+            "width": 253,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_metadata_dag_1",
+          "sourceTableName": "metadata",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 450,
+              "y": 1185
+            },
+            {
+              "x": 450,
+              "y": 1165
+            }
+          ],
+          "label": {
+            "x": 316,
+            "y": 1155,
+            "width": 136,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_log_dag_1",
+          "sourceTableName": "log",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 245,
+              "y": 1050
+            },
+            {
+              "x": 335,
+              "y": 1050
+            }
+          ],
+          "label": {
+            "x": 235,
+            "y": 1012,
+            "width": 94,
             "height": 30,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
