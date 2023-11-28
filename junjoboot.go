@@ -5,14 +5,25 @@ import (
 	"github.com/davidroman0O/seigyo"
 )
 
+type JunjoConfiguration func(j *JunjoConfig) error
+
+type JunjoConfig struct{}
+
 type Junjo struct {
 	bootstrap *seigyo.Seigyo[*data.GlobalState, interface{}]
 }
 
-func New() Junjo {
-	return Junjo{
-		bootstrap: seigyo.New[*data.GlobalState, interface{}](&data.GlobalState{}),
+func New(cfgs ...JunjoConfiguration) (*Junjo, error) {
+	cfg := JunjoConfig{} // TODO: defaults
+	for i := 0; i < len(cfgs); i++ {
+		if err := cfgs[i](&cfg); err != nil {
+			return nil, err
+		}
 	}
+	// TODO: do something with it
+	return &Junjo{
+		bootstrap: seigyo.New[*data.GlobalState, interface{}](&data.GlobalState{}),
+	}, nil
 }
 
 func (j *Junjo) Start() <-chan error {

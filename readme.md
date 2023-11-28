@@ -1,6 +1,7 @@
 # Junjo 
 
 > WORK IN PROGRESS
+> I have so little time so i will try to do a small thing everyday for a while T_T
 
 Changed my plan
 - do distributed raft nodes

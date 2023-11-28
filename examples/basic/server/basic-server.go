@@ -17,8 +17,12 @@ func main() {
 
 	// Notify sigCh when receiving SIGINT or SIGTERM signals.
 	signal.Notify(sigCh, syscall.SIGINT, syscall.SIGTERM)
+	var bootstrap *junjo.Junjo
+	var err error
 
-	bootstrap := junjo.New()
+	if bootstrap, err = junjo.New(); err != nil {
+		panic(err)
+	}
 
 	errCh := bootstrap.Start()
 
@@ -28,7 +32,7 @@ func main() {
 		bootstrap.Stop()
 	}()
 
-	for err := range errCh {
+	for err = range errCh {
 		log.Println("error:", err)
 	}
 
