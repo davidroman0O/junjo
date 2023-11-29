@@ -1339,6 +1339,479 @@
             "uniques": [],
             "checks": [],
             "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "PropertyDefinitionType",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "id",
+                "type": "integer",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "label",
+                "type": "text",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "label"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "description",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "description"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_PropertyDefinitionType_PropertyDefinition_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "PropertyDefinition",
+                "referencedFields": [
+                  "typeID"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "PropertyDefinition",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "id",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "name",
+                "type": "text",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "name"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "typeID",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "typeID"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_PropertyDefinition_PropertyAggregateCompositions_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "PropertyAggregateCompositions",
+                "referencedFields": [
+                  "propertyID"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "PropertyAggregateTypes",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "id",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "label",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "label"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "description",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "description"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_PropertyAggregateTypes_PropertyAggregates_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "PropertyAggregates",
+                "referencedFields": [
+                  "typeID"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "PropertyAggregates",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "id",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "typeID",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "typeID"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "name",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "name"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_SQLITE",
+                "name": "fk_PropertyAggregates_PropertyAggregateCompositions_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "main",
+                "referencedTable": "PropertyAggregateCompositions",
+                "referencedFields": [
+                  "aggregateID"
+                ],
+                "onDelete": "",
+                "onUpdate": "",
+                "isDeferred": false,
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
+          },
+          {
+            "objectType": "Table_SQLITE",
+            "name": "PropertyAggregateCompositions",
+            "autoIncrement": 0,
+            "isWithoutRowID": false,
+            "oldName": "",
+            "rootPage": 0,
+            "sql": "",
+            "hasIndexes": false,
+            "hasTriggers": false,
+            "hasAutoIncrementInDB": false,
+            "fields": [
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "aggregateID",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "aggregateID"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "propertyID",
+                "type": "INTEGER",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "No",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "propertyID"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "orderIndex",
+                "type": "integer",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "orderIndex"
+              },
+              {
+                "objectType": "TableField_SQLITE",
+                "name": "propertyName",
+                "type": "TEXT",
+                "size": -2147483648,
+                "scale": -2147483648,
+                "isNullable": "Yes",
+                "defaultValue": "",
+                "defaultValueType": "Others",
+                "collate": "",
+                "notNullOnConflict": "None",
+                "isAutoIncrement": false,
+                "generatedType": "None",
+                "generatedAlwaysAsValue": "",
+                "oldName": "propertyName"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_SQLITE",
+              "name": "",
+              "fields": [
+                "aggregateID",
+                "propertyID"
+              ],
+              "onConflict": "None",
+              "oldName": ""
+            },
+            "foreignKeys": [],
+            "uniques": [],
+            "checks": [],
+            "triggers": []
           }
         ],
         "views": []
@@ -1398,7 +1871,7 @@
           "x": 920,
           "y": 1040,
           "width": 200,
-          "height": 200,
+          "height": 130,
           "isBold": false,
           "titleColor": {
             "r": 55,
@@ -1510,7 +1983,7 @@
           "x": 350,
           "y": 1200,
           "width": 200,
-          "height": 200,
+          "height": 120,
           "isBold": false,
           "titleColor": {
             "r": 55,
@@ -1526,6 +1999,86 @@
           "x": 30,
           "y": 950,
           "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "PropertyDefinition",
+          "x": 270,
+          "y": 1470,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "PropertyDefinitionType",
+          "x": 30,
+          "y": 1470,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "PropertyAggregateTypes",
+          "x": 1080,
+          "y": 1470,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "PropertyAggregates",
+          "x": 840,
+          "y": 1470,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "main",
+          "tableName": "PropertyAggregateCompositions",
+          "x": 510,
+          "y": 1470,
+          "width": 280,
           "height": 200,
           "isBold": false,
           "titleColor": {
@@ -2020,6 +2573,142 @@
             "x": 235,
             "y": 1012,
             "width": 94,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_PropertyDefinitionType_PropertyDefinition_1",
+          "sourceTableName": "PropertyDefinitionType",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 245,
+              "y": 1570
+            },
+            {
+              "x": 255,
+              "y": 1570
+            }
+          ],
+          "label": {
+            "x": 0,
+            "y": 1532,
+            "width": 326,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_PropertyAggregateTypes_PropertyAggregates_1",
+          "sourceTableName": "PropertyAggregateTypes",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1065,
+              "y": 1570
+            },
+            {
+              "x": 1055,
+              "y": 1570
+            }
+          ],
+          "label": {
+            "x": 731,
+            "y": 1532,
+            "width": 344,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_PropertyAggregates_PropertyAggregateCompositions_1",
+          "sourceTableName": "PropertyAggregates",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 825,
+              "y": 1570
+            },
+            {
+              "x": 805,
+              "y": 1570
+            }
+          ],
+          "label": {
+            "x": 437,
+            "y": 1532,
+            "width": 398,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_PropertyDefinition_PropertyAggregateCompositions_1",
+          "sourceTableName": "PropertyDefinition",
+          "sourceSchemaName": "main",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 485,
+              "y": 1570
+            },
+            {
+              "x": 495,
+              "y": 1570
+            }
+          ],
+          "label": {
+            "x": 475,
+            "y": 1532,
+            "width": 389,
             "height": 30,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,

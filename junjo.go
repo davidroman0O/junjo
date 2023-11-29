@@ -4,6 +4,9 @@ import (
 	"github.com/davidroman0O/junjo/types"
 )
 
+/// I DON'T LIKE IT ANYMOOOOOOOOOOOOOOOOOOOOOOORRRREEEEEEEEEEEEEEEEEEEEEE
+/// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah
+
 ///
 /// Junjo is a hierarchical workflow management system with DAG-Structured tasks intented to orchestrate distributed systems around a set of controlled task queues.
 /// Each `Owner` of `TaskDefinition` will only see the tasks they need to process and report on, while the overall progression of the workflow is managed by `junjo`.

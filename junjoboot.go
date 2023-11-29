@@ -5,6 +5,16 @@ import (
 	"github.com/davidroman0O/seigyo"
 )
 
+/// Second attempt to make something a bit better
+/// I just want a stateless server with an api (probably `fiber`) to build the templates
+/// I think it's stupid that i want to elaborate on so much features, i don't need much so FUCK IT
+/// We will see those interfaces later on, just need a first toy to start somewhere
+/// - simple handlers endpoint api
+/// - simple web app to edit my dag templates: i don't fucking care about the tech, probably will do a dirty htmx app first and see from there
+/// - i don't want to do code edges behaviors or vertices behaviors, i need to have a list of built-in features, i will later for customs
+/// - vertices need to have a json schema-ish validation, i just need to have inputs and outputs to those json schema, could have multiple edges in or out, edges can "plug" to properties of the json schema
+/// -
+
 type JunjoConfiguration func(j *JunjoConfig) error
 
 type JunjoConfig struct{}
